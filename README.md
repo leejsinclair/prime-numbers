@@ -1,7 +1,7 @@
 prime-numbers
 =============
 
-A simple module for calculating prime number beneath a specified number.
+A simple module for calculating prime numbers beneath a specified number.
 
 ## API
 
@@ -16,4 +16,13 @@ primeNumbers.forEach(
 		}
 );
 ```
+Results:
 
+```
+2
+3
+5
+7
+11
+... etc.
+```
