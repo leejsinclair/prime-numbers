@@ -47,7 +47,7 @@ console.log( primeNumbers );
 
 What if you could write a module that could work as a script tag, commonJS require or AMD require.  So I looked at the underscore project and created:
 
-### module: prime-both.js
+### Module: prime-both.js
 
 It seems to work in everything, here is function:
 
@@ -86,7 +86,7 @@ function getPrimes(upToNumber)
 }
 ```
 
-### usage
+### Usage
 
 #### CommonJS - synchronous
 
