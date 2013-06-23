@@ -1,5 +1,5 @@
 var fs = require("fs");
-var prime = require("../prime.js");
+var prime = require("./prime.js");
 var primeNumbers = prime( 100 );
 
 primeNumbers.forEach(
