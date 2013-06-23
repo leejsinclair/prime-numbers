@@ -47,7 +47,7 @@ console.log( primeNumbers );
 
 What if you could write a module that could work as a script tag, commonJS require or AMD require.  So I looked at the underscore project and created:
 
-* prime-both.js
+### module: prime-both.js
 
 It seems to work in everything, here is function:
 
@@ -86,13 +86,50 @@ function getPrimes(upToNumber)
 }
 ```
 
-Results:
+### usage
 
+#### CommonJS - synchronous
+
+``` js
+var prime = require("../html/prime-both.js");
+var primeNumbers = prime.list( 100 );
+
+console.log( primeNumbers );
 ```
-2
-3
-5
-7
-11
-... etc.
+
+#### Browser
+
+``` html
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./prime-both.js"></script>
+<script language="javascript" defer="true">
+	var primeNumbers = prime.list(100);
+	console.log( primeNumbers );
+</script>
+```
+
+#### AMD - asynchronous
+
+``` html
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.js"></script>
+<script language="javascript" defer="true">
+	require.config({
+		baseUrl: '/',
+		enforceDefine: true
+	});
+
+	require(['prime-both'], function(prime)
+		{
+			var primeNumbers = prime(100);
+			console.log( primeNumbers );
+
+		}
+	);
+```
+
+#### load() : MongoDB
+
+``` js
+load("./html/prime-both.js");
+_prime(100);
 ```
