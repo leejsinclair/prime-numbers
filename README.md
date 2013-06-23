@@ -3,7 +3,7 @@ prime-numbers
 
 A simple module for calculating prime numbers beneath a specified number.
 
-## API
+## Node API
 
 ``` js
 var prime = require("./prime.js");
@@ -16,6 +16,25 @@ primeNumbers.forEach(
 		}
 );
 ```
+
+## HTML API
+``` html
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.js"></script>
+<script language="javascript" defer="true">
+	require.config({
+		baseUrl: '/',
+		enforceDefine: true
+	});
+
+	require(['prime-amd'], function(prime)
+		{
+			var numbers = prime(100);
+			console.log( numbers );
+
+		}
+	);
+```
+
 Results:
 
 ```
