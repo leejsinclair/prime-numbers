@@ -7,6 +7,7 @@
 if(typeof define !== 'undefined') define(function(require, exports, module) {
 		return getPrimes;
 });
+
 /* mongodb shin */
 if(typeof db !== 'undefined' && typeof db.version !== 'undefined') {
 	var _prime = getPrimes;
