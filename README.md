@@ -17,7 +17,6 @@ console.log( primeNumbers );
 ### Browser
 
 ``` html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="./prime-common-js.js"></script>
 <script language="javascript" defer="true">
 	var primeNumbers = prime.list(100);
@@ -100,7 +99,6 @@ console.log( primeNumbers );
 #### Browser
 
 ``` html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="./prime-both.js"></script>
 <script language="javascript" defer="true">
 	var primeNumbers = prime.list(100);
