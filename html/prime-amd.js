@@ -1,10 +1,9 @@
+/* Shin required for AMD modules */
 define(function(require, exports, module) {
-	var primeAmd = getPrimes;
-
-	return primeAmd;
+	return getPrimes;
 });
 
-
+/* Get primes base function */
 function getPrimes(upToNumber)
 	{
 		var sieve = [], i, j, primes = [];
