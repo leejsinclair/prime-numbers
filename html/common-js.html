@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AMD loading test</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="./prime-commonJS.js"></script>
+	<script language="javascript" defer="true">
+		$(document).ready(
+				function()
+					{
+						$("#prime-numbers-button").click(
+								function()
+								{
+									var numbers = prime.list(100);
+									var updateNode = $("#prime-numbers").html( JSON.stringify(numbers) );
+									console.log( numbers );
+								}
+						);
+					}
+		);
+	</script>
+</head>
+<body>
+<div id="prime-numbers"></div>
+<button type="button" id="prime-numbers-button">Get them</button>
+</body>
+</html>

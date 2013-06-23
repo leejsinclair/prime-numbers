@@ -1,4 +1,4 @@
-function getPrimes(upToNumber) 
+function getPrimes(upToNumber)
 	{
 	    var sieve = [], i, j, primes = [];
 	    for (i = 2; i <= upToNumber; ++i) 
