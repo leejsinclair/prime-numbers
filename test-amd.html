@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AMD loading test</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.js"></script>
+	<script language="javascript" defer="true">
+		require.config({
+			baseUrl: '/',
+			enforceDefine: true,
+			paths: {
+				jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min'
+			}
+		});
+
+		require(['jquery','prime-amd'], function( jquery, prime)
+			{
+				$("#prime-numbers-button").click(
+						function()
+							{
+								var numbers = prime(100);
+								var updateNode = jquery("#prime-numbers").html( JSON.stringify(numbers) );
+								console.log( numbers );
+							}
+				);
+
+
+			}
+		);
+	</script>
+</head>
+<body>
+	<div id="prime-numbers"></div>
+	<button type="button" id="prime-numbers-button">Get them</button>
+</body>
+</html>
