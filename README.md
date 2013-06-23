@@ -3,21 +3,29 @@ prime-numbers
 
 A simple module for calculating prime numbers beneath a specified number.
 
-## Node API
+## CommonJS - synchronous
+
+### Node
 
 ``` js
-var prime = require("./prime.js");
-var primeNumbers = prime( 100 );
+var prime = require("./prime-commonJS");
+var primeNumbers = prime.list( 100 );
 
-primeNumbers.forEach(
-  function( num )
-		{
-			console.log( num );
-		}
-);
+console.log( primeNumbers );
 ```
 
-## HTML API
+### Browser
+
+``` html
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./prime-commonJS.js"></script>
+<script language="javascript" defer="true">
+	var primeNumbers = prime.list(100);
+	console.log( primeNumbers );
+</script>
+```
+
+## AMD - asynchronous
 ``` html
 <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.js"></script>
 <script language="javascript" defer="true">
@@ -28,8 +36,8 @@ primeNumbers.forEach(
 
 	require(['prime-amd'], function(prime)
 		{
-			var numbers = prime(100);
-			console.log( numbers );
+			var primeNumbers = prime(100);
+			console.log( primeNumbers );
 
 		}
 	);
